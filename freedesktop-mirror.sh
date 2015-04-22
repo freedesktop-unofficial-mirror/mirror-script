@@ -7,7 +7,7 @@ cd "$(dirname "$0")/..";
 for repo in "${repos[@]}" ; do
   # replace / with __ in repository name
   hubrepo="${repo//\//__}"
-  hubrepo="${hubrepo//\+//-plus}"
+  hubrepo="${hubrepo//\+/-plus}"
   git clone --mirror git://anongit.freedesktop.org/"$repo" "$hubrepo" &&
   (
     cd "$hubrepo"
