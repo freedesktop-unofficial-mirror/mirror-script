@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+const Octokat = require('octokat');
+const YAML = require('yamljs');
+const path = require('path');
+const async = require('async');
+
+const needle = require('needle');
+const htmlparser = require('htmlparser2');
+const DomUtils = htmlparser.DomUtils;
+
+var hubconfig = YAML.load(path.join(process.env.HOME, '.config/hub'));
+var hub = new Octokat({token: hubconfig['github.com'][0].oauth_token});
+
+var endWithErr = function(err) { if (err) { console.error(err); process.exitCode = 1; } };
+
+needle.get('http://cgit.freedesktop.org/').pipe(htmlparser.createDomStream(function(err, dom) {
+  if (err) { endWithErr(err); return; }
+  console.log('fetched cgit listing');
+  async.eachLimit(
+    DomUtils.find(function(el) {
+      return el.name === 'td' && el.prev && el.prev.attribs && el.prev.attribs.class === 'sublevel-repo';
+      // console.log(el.name);
+      // return el.name === 'td';
+    }, dom, true).map(function(el) { return {
+      name: DomUtils.getText(el.prev),
+      description: DomUtils.getText(el)
+    }; }),
+    2,
+    function(repo, callback) {
+      var repo_name = repo.name.replace(/\//g, '__').replace(/\+/g, '-plus');
+      console.log('updating', repo_name, ':', repo.description);
+      if (repo.name[0] === '~') { console.log('skipping'); return callback(); }
+      hub.repos('freedesktop-unofficial-mirror', repo_name).update({name: repo_name, description: repo.description + ' (mirror)'}, function(err) {
+        if (err) { console.log(repo_name, err); }
+        callback();
+      });
+    },
+    endWithErr
+  );
+}));
