@@ -1,0 +1,22 @@
+{
+  "name": "mirror-script",
+  "version": "1.0.0",
+  "description": "tools for mirroring git repos to github",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freedesktop-unofficial-mirror/mirror-script.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freedesktop-unofficial-mirror/mirror-script/issues"
+  },
+  "homepage": "https://github.com/freedesktop-unofficial-mirror/mirror-script#readme",
+  "dependencies": {
+    "octokat": "^0.4.9"
+  }
+}
