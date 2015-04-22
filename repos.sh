@@ -3,9 +3,11 @@
 # source this file from other scripts
 
 repos=(
+
 # AT-SPI2 repositories
   at-spi2/at-spi2-atk
   at-spi2/at-spi2-core
+
 # Cross-desktop specifications and code
   xdg/dapi
   xdg/dapi-dbus
@@ -19,6 +21,7 @@ repos=(
   xdg/xdg-user-dirs
   xdg/xdg-utils
   xdg/xdgmime
+
 # GStreamer SDK repositories
   gstreamer-sdk/WildMIDI
   gstreamer-sdk/XML-Simple
@@ -140,6 +143,7 @@ repos=(
   gstreamer-sdk/wavpack
   gstreamer-sdk/windows-external-sdk
   gstreamer-sdk/zlib
+
 # GStreamer repositories
   gstreamer/attic/gst-android
   gstreamer/attic/gst-openmax
@@ -170,6 +174,7 @@ repos=(
   gstreamer/qt-gstreamer
   gstreamer/sdk/cerbero
   gstreamer/www
+
 # LibreOffice repositories
   libreoffice/artwork
   libreoffice/base
@@ -219,6 +224,7 @@ repos=(
   libreoffice/voting
   libreoffice/website
   libreoffice/writer
+
 # PulseAudio repositories
   pulseaudio/paprefs
   pulseaudio/pavucontrol
@@ -228,6 +234,7 @@ repos=(
   pulseaudio/pulseaudio.git.backup
   pulseaudio/reserve
   pulseaudio/webrtc-audio-processing
+
 # Spice virtual desktop interaction
   spice/linux/vd_agent
   spice/qemu
@@ -247,6 +254,7 @@ repos=(
   spice/win32/usbdk
   spice/win32/vd_agent
   spice/win32/vdi_port
+
 # Telepathy communications framework
   telepathy/telepathy-butterfly
   telepathy/telepathy-doc
@@ -272,20 +280,24 @@ repos=(
   telepathy/telepathy-ssh-contact
   telepathy/telepathy-sunshine
   telepathy/telepathy-yell
+
 # VA-API (Video Acceleration API)
   vaapi/intel-driver
   vaapi/libva
   vaapi/pvr-driver
   vaapi/vdpau-driver
   vaapi/xvba-driver
+
 # Wayland
   wayland/libinput
   wayland/wayland
   wayland/wayland-java
   wayland/wayland-web
   wayland/weston
+
 # X.Org Foundation
   xorg/foundation/bylaws
+
 # X.Org applications
   xorg/app/appres
   xorg/app/bdftopcf
@@ -402,6 +414,7 @@ repos=(
   xorg/app/xwd
   xorg/app/xwininfo
   xorg/app/xwud
+
 # X.Org bitmap fonts
   xorg/font/adobe-100dpi
   xorg/font/adobe-75dpi
@@ -441,6 +454,7 @@ repos=(
   xorg/font/util
   xorg/font/winitzki-cyrillic
   xorg/font/xfree86-type1
+
 # X.Org build utilities
   xorg/util/cf
   xorg/util/gccmakedep
@@ -451,11 +465,13 @@ repos=(
   xorg/util/makedepend
   xorg/util/modular
   xorg/util/xmkmf
+
 # X.Org data and documentation
   xorg/data/bitmaps
   xorg/data/cursors
   xorg/doc/xorg-docs
   xorg/doc/xorg-sgml-doctools
+
 # X.Org drivers
   xorg/driver/glamor
   xorg/driver/xf86-input-acecad
@@ -552,6 +568,7 @@ repos=(
   xorg/driver/xf86-video-wsfb
   xorg/driver/xf86-video-xgi
   xorg/driver/xf86-video-xgixp
+
 # X.Org libraries
   xorg/lib/libAppleWM
   xorg/lib/libFS
@@ -607,6 +624,7 @@ repos=(
   xorg/lib/libxkbui
   xorg/lib/libxshmfence
   xorg/lib/libxtrans
+
 # X.Org protocol headers
   xorg/proto/applewmproto
   xorg/proto/bigreqsproto
@@ -647,15 +665,18 @@ repos=(
   xorg/proto/xf86vidmodeproto
   xorg/proto/xineramaproto
   xorg/proto/xproto
+
 # X.Org repositories
   xorg/xprint
   xorg/xserver
   xorg/xserver-test
+
 # X.Org test suites
   xorg/test/xhiv
   xorg/test/xorg-gtest
   xorg/test/xorg-integration-tests
   xorg/test/xts
+
 # XCB repositories
   xcb/demo
   xcb/historic
@@ -674,11 +695,13 @@ repos=(
   xcb/util-wm
   xcb/xhsb
   xcb/xpyb
+
 # Ytstenut
   ytstenut/telepathy-ytstenut
   ytstenut/ytstenut-glib
   ytstenut/ytstenut-plugins
   ytstenut/ytstenut-protocol
+
 # freedesktop.org repositories
   ConsoleKit
   ModemManager/ModemManager
@@ -839,9 +862,11 @@ repos=(
   zeitgeist/zeitgeist-datasources
   zeitgeist/zeitgeist-extensions
   zeitgeist/zeitgeist-sharp
+
 # libfprint fingerprint reader
   libfprint/fprintd
   libfprint/libfprint
+
 # realmd repositories
   realmd/adcli
   realmd/realmd

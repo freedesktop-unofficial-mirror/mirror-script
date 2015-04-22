@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+
+const needle = require('needle');
+const htmlparser = require('htmlparser2');
+const DomUtils = htmlparser.DomUtils;
+
+var endWithErr = function(err) { if (err) { console.error(err); process.exitCode = 1; } };
+
+needle.get('http://cgit.freedesktop.org/').pipe(htmlparser.createDomStream(function(err, dom) {
+  if (err) { endWithErr(err); return; }
+
+  console.log('#!/usr/bin/env bash\n\n# source this file from other scripts\n\nrepos=(');
+  DomUtils.find(function(el) {
+    var text;
+    if (el.name === 'td' && el.attribs) {
+      if (el.attribs.class === 'sublevel-repo') {
+        text = DomUtils.getText(el);
+        if (text[0] !== '~') {
+          console.log('  ' + text);
+        }
+      } else if (el.attribs.class === 'reposection' && !(/user repositories/i).test(text = DomUtils.getText(el))) {
+        console.log('\n# ' + text);
+      }
+    }
+    // console.log(el.name);
+    // return el.name === 'td';
+  }, dom, true);
+  console.log(')');
+}));
