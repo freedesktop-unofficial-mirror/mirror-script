@@ -13,3 +13,7 @@ Update Descriptions
 Update repos
 
     ./freedesktop-mirror-update.sh
+
+Update list of repos
+
+    ./parse-repos > repos.sh
